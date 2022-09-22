@@ -2,7 +2,6 @@ package com.example.videoeditorjava;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -98,9 +97,5 @@ public class MainActivity extends AppCompatActivity {
 
     private void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    private Uri resourceUri(int resourceId) {
-        return new Uri.Builder().scheme(ContentResolver.SCHEME_ANDROID_RESOURCE).authority(getResources().getResourceEntryName(resourceId)).appendPath(getResources().getResourceEntryName(resourceId)).build();
     }
 }
