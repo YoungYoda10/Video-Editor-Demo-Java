@@ -88,14 +88,7 @@ public class MainActivity extends AppCompatActivity {
         // In this example, we do not need access to the Uri(s) after the editor is closed
         // so we pass false in the constructor
         VideoEditorSettingsList settingsList = new VideoEditorSettingsList(false);
-        LoadSettings loadSettings = new LoadSettings();
-        loadSettings.setSource(uri);
-        //TODO set URI
-//        settingsList.configure<LoadSettings> {
-//            it.source = uri
-//            // Set the source as the Uri of the video to be loaded
-//
-//        }
+        settingsList.getSettingsModel(LoadSettings.class).setSource(uri);
         // Start the video editor using VideoEditorBuilder
         // The result will be obtained in onActivityResult() corresponding to EDITOR_REQUEST_CODE
         new VideoEditorBuilder(this).setSettingsList(settingsList).startActivityForResult(this, EDITOR_REQUEST_CODE);
